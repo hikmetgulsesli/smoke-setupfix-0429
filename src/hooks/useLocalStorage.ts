@@ -3,14 +3,20 @@ import { getHabits, setHabits } from '../utils/storage';
 import type { Habit } from '../types/habit';
 
 export function useLocalStorage() {
-  const [habits, setHabitsState] = useState<Habit[]>(() => getHabits());
+  const [habits, setHabitsState] = useState<Habit[]>(() => {
+    try {
+      return getHabits();
+    } catch {
+      return [];
+    }
+  });
   const [error, setError] = useState<string | null>(null);
 
   const refresh = useCallback(() => {
     try {
       setHabitsState(getHabits());
       setError(null);
-    } catch (err) {
+    } catch {
       setError('Alışkanlıklar yüklenemedi.');
     }
   }, []);

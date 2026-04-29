@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import type { Habit } from '../types/habit';
 import { HabitItem } from './HabitItem';
 
@@ -8,8 +9,14 @@ interface HabitListProps {
 }
 
 export function HabitList({ habits, onToggle, onDelete }: HabitListProps) {
-  const sortedHabits = [...habits].sort((a, b) => b.createdAt - a.createdAt);
-  const completedCount = habits.filter((h) => h.completed).length;
+  const sortedHabits = useMemo(
+    () => [...habits].sort((a, b) => b.createdAt - a.createdAt),
+    [habits]
+  );
+  const completedCount = useMemo(
+    () => habits.filter((h) => h.completed).length,
+    [habits]
+  );
 
   return (
     <section className="col-span-4 md:col-span-12 flex flex-col gap-sm">

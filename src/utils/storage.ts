@@ -12,15 +12,11 @@ function isHabit(value: unknown): value is Habit {
 }
 
 export function getHabits(): Habit[] {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return [];
-    const parsed = JSON.parse(raw);
-    if (!Array.isArray(parsed)) return [];
-    return parsed.filter(isHabit);
-  } catch {
-    return [];
-  }
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return [];
+  const parsed = JSON.parse(raw);
+  if (!Array.isArray(parsed)) throw new Error('Invalid data format');
+  return parsed.filter(isHabit);
 }
 
 export function setHabits(habits: Habit[]): void {

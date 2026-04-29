@@ -34,7 +34,7 @@ export function HabitForm({ onAdd, variant = 'default' }: HabitFormProps) {
 
   if (variant === 'compact') {
     return (
-      <div className="w-full bg-surface-container rounded-xl border border-outline-variant p-sm flex items-center gap-sm shadow-sm transition-all focus-within:border-primary/50 focus-within:ring-1 focus-within:ring-primary/50 mb-xl">
+      <form className="w-full bg-surface-container rounded-xl border border-outline-variant p-sm flex items-center gap-sm shadow-sm transition-all focus-within:border-primary/50 focus-within:ring-1 focus-within:ring-primary/50 mb-xl" onSubmit={handleSubmit}>
         <div className="p-xs text-on-surface-variant flex items-center justify-center">
           <span className="material-symbols-outlined text-[20px]">add</span>
         </div>
@@ -43,6 +43,7 @@ export function HabitForm({ onAdd, variant = 'default' }: HabitFormProps) {
           placeholder="Yeni alışkanlık ekle..."
           type="text"
           value={title}
+          maxLength={100}
           onChange={(e) => {
             setTitle(e.target.value);
             setError(null);
@@ -54,15 +55,14 @@ export function HabitForm({ onAdd, variant = 'default' }: HabitFormProps) {
         />
         <button
           className="bg-primary text-on-primary font-label-sm text-label-sm px-md py-sm rounded-lg hover:bg-primary-fixed transition-colors active:scale-95 flex items-center gap-xs cursor-pointer"
-          type="button"
-          onClick={handleSubmit}
+          type="submit"
         >
           Ekle
         </button>
         {error && (
           <span className="text-error text-xs ml-2">{error}</span>
         )}
-      </div>
+      </form>
     );
   }
 
@@ -76,12 +76,12 @@ export function HabitForm({ onAdd, variant = 'default' }: HabitFormProps) {
             placeholder="Örn: Kitap oku, Spor yap..."
             type="text"
             value={title}
+            maxLength={100}
             onChange={(e) => {
               setTitle(e.target.value);
               setError(null);
             }}
             aria-label="Yeni alışkanlık başlığı"
-            maxLength={100}
           />
           {error && (
             <span className="absolute -bottom-5 left-0 text-error text-xs">{error}</span>
