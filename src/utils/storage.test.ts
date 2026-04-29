@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
-import { getHabits, setHabits, addHabit, removeHabit, toggleHabit } from './storage';
+import { getHabits, setHabits, addHabit, removeHabit, toggleHabit, STORAGE_KEY } from './storage';
 import type { Habit } from '../types/habit';
 
 const sampleHabit: Habit = {
@@ -27,32 +27,46 @@ describe('storage', () => {
     });
 
     it('returns empty array when localStorage has invalid JSON', () => {
-      localStorage.setItem('habits_data', 'not-json');
+      localStorage.setItem(STORAGE_KEY, 'not-json');
       expect(getHabits()).toEqual([]);
     });
 
     it('returns empty array when localStorage has non-array value', () => {
-      localStorage.setItem('habits_data', JSON.stringify({ foo: 'bar' }));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ foo: 'bar' }));
       expect(getHabits()).toEqual([]);
     });
 
     it('returns habits from localStorage', () => {
       const habits = [sampleHabit];
-      localStorage.setItem('habits_data', JSON.stringify(habits));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(habits));
       expect(getHabits()).toEqual(habits);
+    });
+
+    it('filters out malformed habit entries', () => {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify([
+        sampleHabit,
+        { foo: 'bar' },
+        null,
+        { id: 'bad', title: 123 },
+        sampleHabit2,
+      ]));
+      const result = getHabits();
+      expect(result).toHaveLength(2);
+      expect(result[0].id).toBe('1');
+      expect(result[1].id).toBe('2');
     });
   });
 
   describe('setHabits', () => {
     it('writes habits to localStorage', () => {
       setHabits([sampleHabit]);
-      const raw = localStorage.getItem('habits_data');
+      const raw = localStorage.getItem(STORAGE_KEY);
       expect(raw).toBe(JSON.stringify([sampleHabit]));
     });
 
     it('handles empty array', () => {
       setHabits([]);
-      const raw = localStorage.getItem('habits_data');
+      const raw = localStorage.getItem(STORAGE_KEY);
       expect(raw).toBe('[]');
     });
   });

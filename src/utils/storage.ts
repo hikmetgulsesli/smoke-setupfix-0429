@@ -1,6 +1,15 @@
 import type { Habit } from '../types/habit';
 
-const STORAGE_KEY = 'habits_data';
+export const STORAGE_KEY = 'habits_data';
+
+function isHabit(value: unknown): value is Habit {
+  return (
+    value !== null &&
+    typeof value === 'object' &&
+    typeof (value as Habit).id === 'string' &&
+    typeof (value as Habit).title === 'string'
+  );
+}
 
 export function getHabits(): Habit[] {
   try {
@@ -8,7 +17,7 @@ export function getHabits(): Habit[] {
     if (!raw) return [];
     const parsed = JSON.parse(raw);
     if (!Array.isArray(parsed)) return [];
-    return parsed;
+    return parsed.filter(isHabit);
   } catch {
     return [];
   }
@@ -17,8 +26,8 @@ export function getHabits(): Habit[] {
 export function setHabits(habits: Habit[]): void {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(habits));
-  } catch {
-    // localStorage write failed (quota exceeded or disabled)
+  } catch (err) {
+    console.error('[storage] Failed to write habits to localStorage:', err);
   }
 }
 
