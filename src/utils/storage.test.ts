@@ -26,14 +26,14 @@ describe('storage', () => {
       expect(getHabits()).toEqual([]);
     });
 
-    it('returns empty array when localStorage has invalid JSON', () => {
+    it('throws when localStorage has invalid JSON', () => {
       localStorage.setItem(STORAGE_KEY, 'not-json');
-      expect(getHabits()).toEqual([]);
+      expect(() => getHabits()).toThrow();
     });
 
-    it('returns empty array when localStorage has non-array value', () => {
+    it('throws when localStorage has non-array value', () => {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({ foo: 'bar' }));
-      expect(getHabits()).toEqual([]);
+      expect(() => getHabits()).toThrow();
     });
 
     it('returns habits from localStorage', () => {
