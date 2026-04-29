@@ -1,0 +1,29 @@
+[
+  {
+    "screenId": "055988a9dfb34376a709a0d2e28ff443",
+    "title": "Boş Durum (Empty State)",
+    "componentName": "BosDurumEmptyState",
+    "file": "src/screens/BosDurumEmptyState.tsx",
+    "buttons": 2,
+    "inputs": 1,
+    "links": 6
+  },
+  {
+    "screenId": "9dbd64d3768b4abf8afe41a3dd2916ee",
+    "title": "Ana Sayfa (Dashboard)",
+    "componentName": "AnaSayfaDashboard",
+    "file": "src/screens/AnaSayfaDashboard.tsx",
+    "buttons": 9,
+    "inputs": 1,
+    "links": 6
+  },
+  {
+    "screenId": "5680562356704beabb12ba855d5b0b4b",
+    "title": "Hata Durumu (Error State)",
+    "componentName": "HataDurumuErrorState",
+    "file": "src/screens/HataDurumuErrorState.tsx",
+    "buttons": 4,
+    "inputs": 0,
+    "links": 6
+  }
+]
