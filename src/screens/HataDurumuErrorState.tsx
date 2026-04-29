@@ -21,29 +21,29 @@ export function HataDurumuErrorState({ habits, onAdd, onToggle, onDelete, error,
   return (
     <>
       {/* TopAppBar */}
-      <header className="bg-surface surface-container-high docked full-width top-0 z-40 border-b border-outline-variant flat no shadows font-inter text-sm antialiased flex justify-between items-center px-5 h-16 w-full mx-auto">
+      <header className="bg-surface surface-container-high docked full-width top-0 z-40 border-b border-outline-variant flat no shadows font-body text-sm antialiased flex justify-between items-center px-5 h-16 w-full mx-auto">
         <div className="text-xl font-bold text-primary tracking-tight font-display text-display flex items-center gap-2">
           Alışkanlık Takipçisi
         </div>
         <div className="hidden md:flex gap-6">
-          <a className="text-primary font-semibold hover:bg-surface-variant hover:text-primary-fixed transition-colors active:scale-95 px-3 py-2 rounded-lg flex items-center gap-2" href="#">
+          <a className="text-primary font-semibold hover:bg-surface-variant hover:text-primary-fixed transition-colors active:scale-95 px-3 py-2 rounded-lg flex items-center gap-2" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <span className="material-symbols-outlined" style={{fontVariationSettings: "'FILL' 1"}}>check_circle</span>
             Alışkanlıklar
           </a>
-          <a className="text-on-surface hover:bg-surface-variant hover:text-primary-fixed transition-colors active:scale-95 px-3 py-2 rounded-lg flex items-center gap-2" href="#">
+          <a className="text-on-surface hover:bg-surface-variant hover:text-primary-fixed transition-colors active:scale-95 px-3 py-2 rounded-lg flex items-center gap-2" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <span className="material-symbols-outlined">leaderboard</span>
             İstatistikler
           </a>
-          <a className="text-on-surface hover:bg-surface-variant hover:text-primary-fixed transition-colors active:scale-95 px-3 py-2 rounded-lg flex items-center gap-2" href="#">
+          <a className="text-on-surface hover:bg-surface-variant hover:text-primary-fixed transition-colors active:scale-95 px-3 py-2 rounded-lg flex items-center gap-2" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <span className="material-symbols-outlined">person</span>
             Profil
           </a>
         </div>
         <div className="flex items-center gap-4">
           <button
-            disabled
-            className="text-on-surface hover:bg-surface-variant hover:text-primary transition-colors p-2 rounded-full active:scale-95 opacity-50 cursor-not-allowed"
+            className="text-on-surface hover:bg-surface-variant hover:text-primary transition-colors p-2 rounded-full active:scale-95 cursor-pointer"
             aria-label="Ayarlar"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             <span className="material-symbols-outlined">settings</span>
           </button>
@@ -85,16 +85,16 @@ export function HataDurumuErrorState({ habits, onAdd, onToggle, onDelete, error,
         </section>
       </main>
       {/* BottomNavBar (Mobile) */}
-      <nav className="md:hidden bg-surface/95 backdrop-blur-md font-inter text-[10px] font-medium text-primary fixed bottom-0 w-full z-50 border-t border-outline-variant shadow-2xl flex justify-around items-center px-4 py-3 h-20 left-0">
-        <a className="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl px-3 py-1 hover:text-primary-fixed active:scale-90 transition-all" href="#">
+      <nav className="md:hidden bg-surface/95 backdrop-blur-md font-body text-[10px] font-medium text-primary fixed bottom-0 w-full z-50 border-t border-outline-variant shadow-2xl flex justify-around items-center px-4 py-3 h-20 left-0">
+        <a className="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl px-3 py-1 hover:text-primary-fixed active:scale-90 transition-all" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
           <span className="material-symbols-outlined mb-1" style={{fontVariationSettings: "'FILL' 1"}}>check_circle</span>
           <span>Alışkanlıklar</span>
         </a>
-        <a className="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all" href="#">
+        <a className="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
           <span className="material-symbols-outlined mb-1">leaderboard</span>
           <span>İstatistikler</span>
         </a>
-        <a className="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all" href="#">
+        <a className="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary-fixed active:scale-90 transition-all" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
           <span className="material-symbols-outlined mb-1">person</span>
           <span>Profil</span>
         </a>
