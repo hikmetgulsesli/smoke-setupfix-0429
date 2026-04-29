@@ -31,5 +31,9 @@ export function useLocalStorage() {
     }
   }, []);
 
-  return { habits, error, refresh, saveHabits };
+  const dismissError = useCallback(() => {
+    setError(null);
+  }, []);
+
+  return { habits, error, refresh, saveHabits, dismissError };
 }

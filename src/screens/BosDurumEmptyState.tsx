@@ -23,11 +23,11 @@ export function BosDurumEmptyState({ onAdd }: BosDurumEmptyStateProps) {
           <div className="text-xl font-bold text-primary tracking-tight font-display">Alışkanlık Takipçisi</div>
           {/* Desktop Navigation (Hidden on Mobile) */}
           <div className="hidden md:flex items-center gap-8">
-            <a className="text-primary font-semibold hover:bg-surface-container-high hover:text-primary transition-colors active:scale-95 px-3 py-2 rounded-lg" href="#">Alışkanlıklar</a>
-            <a className="text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors active:scale-95 px-3 py-2 rounded-lg" href="#">İstatistikler</a>
-            <a className="text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors active:scale-95 px-3 py-2 rounded-lg" href="#">Profil</a>
+            <a className="text-primary font-semibold hover:bg-surface-container-high hover:text-primary transition-colors active:scale-95 px-3 py-2 rounded-lg" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Alışkanlıklar</a>
+            <a className="text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors active:scale-95 px-3 py-2 rounded-lg" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>İstatistikler</a>
+            <a className="text-on-surface-variant hover:bg-surface-container-high hover:text-primary transition-colors active:scale-95 px-3 py-2 rounded-lg" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>Profil</a>
           </div>
-          <button className="text-primary hover:bg-surface-container-high hover:text-primary transition-colors active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center cursor-pointer" aria-label="Ayarlar">
+          <button className="text-primary hover:bg-surface-container-high hover:text-primary transition-colors active:scale-95 transition-transform p-2 rounded-full flex items-center justify-center cursor-pointer" aria-label="Ayarlar" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <span className="material-symbols-outlined" data-icon="settings">settings</span>
           </button>
         </div>
@@ -53,17 +53,17 @@ export function BosDurumEmptyState({ onAdd }: BosDurumEmptyStateProps) {
       {/* BottomNavBar (Shared Component - Mobile Only) */}
       <nav className="md:hidden bg-surface/95 backdrop-blur-md font-body text-[10px] font-medium fixed bottom-0 left-0 w-full z-50 border-t border-outline-variant shadow-2xl flex justify-around items-center px-4 py-3 h-20">
         {/* Active Tab: Alışkanlıklar */}
-        <a className="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl px-3 py-1 hover:text-primary active:scale-90 transition-all flex-1 mx-1" href="#">
+        <a className="flex flex-col items-center justify-center text-primary bg-primary/10 rounded-xl px-3 py-1 hover:text-primary active:scale-90 transition-all flex-1 mx-1" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
           <span className="material-symbols-outlined mb-1 text-[24px]" data-icon="check_circle">check_circle</span>
           <span>Alışkanlıklar</span>
         </a>
         {/* Inactive Tab: İstatistikler */}
-        <a className="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all flex-1 mx-1" href="#">
+        <a className="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all flex-1 mx-1" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
           <span className="material-symbols-outlined mb-1 text-[24px]" data-icon="leaderboard">leaderboard</span>
           <span>İstatistikler</span>
         </a>
         {/* Inactive Tab: Profil */}
-        <a className="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all flex-1 mx-1" href="#">
+        <a className="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary active:scale-90 transition-all flex-1 mx-1" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
           <span className="material-symbols-outlined mb-1 text-[24px]" data-icon="person">person</span>
           <span>Profil</span>
         </a>
