@@ -20,11 +20,7 @@ export function getHabits(): Habit[] {
 }
 
 export function setHabits(habits: Habit[]): void {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(habits));
-  } catch (err) {
-    console.error('[storage] Failed to write habits to localStorage:', err);
-  }
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(habits));
 }
 
 export function addHabit(habit: Habit): void {

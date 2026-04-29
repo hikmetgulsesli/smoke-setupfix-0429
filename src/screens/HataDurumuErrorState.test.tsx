@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { HataDurumuErrorState } from './HataDurumuErrorState';
 import type { Habit } from '../types/habit';
@@ -9,11 +9,15 @@ const mockOnDelete = vi.fn();
 const mockOnDismiss = vi.fn();
 
 const habits: Habit[] = [
-  { id: '1', title: 'Kitap Oku', completed: false, createdAt: 1000 },
-  { id: '2', title: 'Spor Yap', completed: true, createdAt: 2000 },
+  { id: '1', title: 'Su İç', completed: true, createdAt: 1000 },
+  { id: '2', title: 'Kitap Oku', completed: false, createdAt: 2000 },
 ];
 
 describe('HataDurumuErrorState', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
   it('renders error banner with message', () => {
     render(
       <HataDurumuErrorState
@@ -21,27 +25,29 @@ describe('HataDurumuErrorState', () => {
         onAdd={mockOnAdd}
         onToggle={mockOnToggle}
         onDelete={mockOnDelete}
-        error="Depolama alanı dolu."
+        error="Tarayıcı ayarlarınızı kontrol edin."
         onDismiss={mockOnDismiss}
       />
     );
+
     expect(screen.getByText('Veriler kaydedilemedi.')).toBeInTheDocument();
-    expect(screen.getByText('Depolama alanı dolu.')).toBeInTheDocument();
+    expect(screen.getByText('Tarayıcı ayarlarınızı kontrol edin.')).toBeInTheDocument();
   });
 
-  it('renders habits list', () => {
+  it('renders habits list dimmed', () => {
     render(
       <HataDurumuErrorState
         habits={habits}
         onAdd={mockOnAdd}
         onToggle={mockOnToggle}
         onDelete={mockOnDelete}
-        error="Hata"
+        error="Kaydetme hatası"
         onDismiss={mockOnDismiss}
       />
     );
+
+    expect(screen.getByText('Su İç')).toBeInTheDocument();
     expect(screen.getByText('Kitap Oku')).toBeInTheDocument();
-    expect(screen.getByText('Spor Yap')).toBeInTheDocument();
   });
 
   it('calls onDismiss when check button clicked', () => {
@@ -51,40 +57,48 @@ describe('HataDurumuErrorState', () => {
         onAdd={mockOnAdd}
         onToggle={mockOnToggle}
         onDelete={mockOnDelete}
-        error="Hata"
+        error="Kaydetme hatası"
         onDismiss={mockOnDismiss}
       />
     );
+
     const dismissBtn = screen.getByLabelText('Hatayı kapat');
     fireEvent.click(dismissBtn);
-    expect(mockOnDismiss).toHaveBeenCalled();
+    expect(mockOnDismiss).toHaveBeenCalledTimes(1);
   });
 
-  it('renders header with app title', () => {
+  it('renders app header with title', () => {
     render(
       <HataDurumuErrorState
         habits={habits}
         onAdd={mockOnAdd}
         onToggle={mockOnToggle}
         onDelete={mockOnDelete}
-        error="Hata"
+        error="Kaydetme hatası"
         onDismiss={mockOnDismiss}
       />
     );
+
     expect(screen.getByText('Alışkanlık Takipçisi')).toBeInTheDocument();
   });
 
-  it('has aria-label on dismiss button', () => {
+  it('renders current date', () => {
     render(
       <HataDurumuErrorState
         habits={habits}
         onAdd={mockOnAdd}
         onToggle={mockOnToggle}
         onDelete={mockOnDelete}
-        error="Hata"
+        error="Kaydetme hatası"
         onDismiss={mockOnDismiss}
       />
     );
-    expect(screen.getByLabelText('Hatayı kapat')).toBeInTheDocument();
+
+    const today = new Date().toLocaleDateString('tr-TR', {
+      weekday: 'long',
+      day: 'numeric',
+      month: 'long',
+    });
+    expect(screen.getByText(today)).toBeInTheDocument();
   });
 });

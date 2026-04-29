@@ -90,7 +90,7 @@ describe('App Integration', () => {
       throw new Error('Storage quota exceeded');
     });
     render(<App />);
-    expect(screen.getByText('Alışkanlıklar kaydedilemedi. Tarayıcı ayarlarınızı kontrol edin.')).toBeInTheDocument();
+    expect(screen.getByText('Alışkanlıklar yüklenemedi. Tarayıcı ayarlarınızı kontrol edin.')).toBeInTheDocument();
   });
 
   it('dismisses error banner when check button clicked', () => {
@@ -102,7 +102,7 @@ describe('App Integration', () => {
     const dismissBtn = screen.getByLabelText('Hatayı kapat');
     fireEvent.click(dismissBtn);
 
-    expect(screen.queryByText('Alışkanlıklar kaydedilemedi. Tarayıcı ayarlarınızı kontrol edin.')).not.toBeInTheDocument();
+    expect(screen.queryByText('Alışkanlıklar yüklenemedi. Tarayıcı ayarlarınızı kontrol edin.')).not.toBeInTheDocument();
   });
 
   it('renders HataDurumuErrorState when error and habits exist', () => {

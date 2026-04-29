@@ -1,22 +1,24 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { getHabits, setHabits } from '../utils/storage';
 import type { Habit } from '../types/habit';
 
 export function useLocalStorage() {
+  const initErrorRef = useRef<string | null>(null);
   const [habits, setHabitsState] = useState<Habit[]>(() => {
     try {
       return getHabits();
     } catch {
+      initErrorRef.current = 'Alışkanlıklar yüklenemedi. Tarayıcı ayarlarınızı kontrol edin.';
       return [];
     }
   });
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(() => initErrorRef.current);
 
   const refresh = useCallback(() => {
     try {
       setHabitsState(getHabits());
       setError(null);
-    } catch {
+    } catch (err) {
       setError('Alışkanlıklar yüklenemedi.');
     }
   }, []);
