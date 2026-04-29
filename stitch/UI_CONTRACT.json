@@ -1,0 +1,431 @@
+[
+  {
+    "screenId": "055988a9dfb34376a709a0d2e28ff443",
+    "screenTitle": "Boş Durum (Empty State)",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Alışkanlıklar",
+        "href": "#",
+        "line": 118
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 119
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 120
+      },
+      {
+        "type": "link",
+        "label": "Alışkanlıklar",
+        "href": "#",
+        "line": 157
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 162
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 167
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 122
+      },
+      {
+        "type": "button",
+        "label": "Ekle",
+        "line": 135
+      },
+      {
+        "type": "input",
+        "label": "Yeni alışkanlık ekle...",
+        "inputType": "text",
+        "placeholder": "Yeni alışkanlık ekle...",
+        "line": 134
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Alışkanlıklar",
+        "href": "#",
+        "line": 118
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 119
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 120
+      },
+      {
+        "type": "link",
+        "label": "Alışkanlıklar",
+        "href": "#",
+        "line": 157
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 162
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 167
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 122
+      },
+      {
+        "type": "button",
+        "label": "Ekle",
+        "line": 135
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Yeni alışkanlık ekle...",
+        "inputType": "text",
+        "placeholder": "Yeni alışkanlık ekle...",
+        "line": 134
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 9,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "9dbd64d3768b4abf8afe41a3dd2916ee",
+    "screenTitle": "Ana Sayfa (Dashboard)",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Alışkanlıklar",
+        "href": "#",
+        "line": 157
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 161
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 165
+      },
+      {
+        "type": "link",
+        "label": "Alışkanlıklar",
+        "href": "#",
+        "line": 244
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 248
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 252
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 169
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 178
+      },
+      {
+        "type": "button",
+        "label": "Ekle",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "check_circle",
+        "line": 201
+      },
+      {
+        "type": "button",
+        "label": "Sil",
+        "line": 206
+      },
+      {
+        "type": "button",
+        "label": "radio_button_unchecked",
+        "line": 213
+      },
+      {
+        "type": "button",
+        "label": "Sil",
+        "line": 218
+      },
+      {
+        "type": "button",
+        "label": "radio_button_unchecked",
+        "line": 225
+      },
+      {
+        "type": "button",
+        "label": "Sil",
+        "line": 230
+      },
+      {
+        "type": "input",
+        "label": "Örn: Kitap oku, Spor yap...",
+        "inputType": "text",
+        "placeholder": "Örn: Kitap oku, Spor yap...",
+        "line": 188
+      },
+      {
+        "type": "form",
+        "label": "form",
+        "line": 186
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Alışkanlıklar",
+        "href": "#",
+        "line": 157
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 161
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 165
+      },
+      {
+        "type": "link",
+        "label": "Alışkanlıklar",
+        "href": "#",
+        "line": 244
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 248
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 252
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 169
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 178
+      },
+      {
+        "type": "button",
+        "label": "Ekle",
+        "line": 190
+      },
+      {
+        "type": "button",
+        "label": "check_circle",
+        "line": 201
+      },
+      {
+        "type": "button",
+        "label": "Sil",
+        "line": 206
+      },
+      {
+        "type": "button",
+        "label": "radio_button_unchecked",
+        "line": 213
+      },
+      {
+        "type": "button",
+        "label": "Sil",
+        "line": 218
+      },
+      {
+        "type": "button",
+        "label": "radio_button_unchecked",
+        "line": 225
+      },
+      {
+        "type": "button",
+        "label": "Sil",
+        "line": 230
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "Örn: Kitap oku, Spor yap...",
+        "inputType": "text",
+        "placeholder": "Örn: Kitap oku, Spor yap...",
+        "line": 188
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 17,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "5680562356704beabb12ba855d5b0b4b",
+    "screenTitle": "Hata Durumu (Error State)",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Alışkanlıklar",
+        "href": "#",
+        "line": 159
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 163
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 167
+      },
+      {
+        "type": "link",
+        "label": "Alışkanlıklar",
+        "href": "#",
+        "line": 296
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 300
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 304
+      },
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 173
+      },
+      {
+        "type": "button",
+        "label": "check",
+        "line": 207
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Alışkanlıklar",
+        "href": "#",
+        "line": 159
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 163
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 167
+      },
+      {
+        "type": "link",
+        "label": "Alışkanlıklar",
+        "href": "#",
+        "line": 296
+      },
+      {
+        "type": "link",
+        "label": "İstatistikler",
+        "href": "#",
+        "line": 300
+      },
+      {
+        "type": "link",
+        "label": "Profil",
+        "href": "#",
+        "line": 304
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "settings",
+        "line": 173
+      },
+      {
+        "type": "button",
+        "label": "check",
+        "line": 207
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 8,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
